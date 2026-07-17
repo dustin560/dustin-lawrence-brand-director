@@ -405,6 +405,13 @@
     position: relative;
   }
   .caseImg img, .caseImg video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .caseImg iframe {
+    position: absolute; top: 50%; left: 50%;
+    width: 178%; height: 100%;
+    transform: translate(-50%, -50%);
+    border: 0;
+    pointer-events: none;
+  }
   .caseImg .fallback {
     width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:32px;
     font-family: 'Sora', sans-serif; font-weight: 800; font-size:28px; line-height:1.05; letter-spacing:-0.03em;
@@ -768,9 +775,13 @@
 
       <!-- Frontline AIDS -->
       <article class="caseCard">
-        <div class="caseImg">
-          <img src="https://cdn.brandpie.com/wp-content/uploads/2025/09/3.-Brandpie_FrontlineAIDS_Outdoor.jpg" alt="Frontline AIDS — brand identity in outdoor application" onerror="this.parentElement.innerHTML='&lt;div class=\'fallback\'&gt;JOIN US.&lt;br/&gt;&lt;em&gt;END IT.&lt;/em&gt;&lt;/div&gt;'" />
-        </div>
+        <a class="caseImg caseVideo" href="https://vimeo.com/317227281" target="_blank" rel="noopener" aria-label="Watch the Frontline AIDS brand film on Vimeo">
+          <iframe src="https://player.vimeo.com/video/317227281?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&autopause=0" allow="autoplay" title="Frontline AIDS — brand film"></iframe>
+          <span class="playBadge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            Open on Vimeo
+          </span>
+        </a>
         <div>
           <div class="caseMeta"><span>2018 · BrandPie</span><span>NGO &amp; purpose</span><span>UK / Global</span></div>
           <p class="caseTagline">JOIN US. <em>END IT.</em></p>
@@ -812,9 +823,13 @@
 
       <!-- Baker Tilly -->
       <article class="caseCard">
-        <div class="caseImg">
-          <img src="https://cdn.brandpie.com/wp-content/uploads/2024/09/Baker_tilly_thumb.png" alt="Baker Tilly brand identity" onerror="this.parentElement.innerHTML='&lt;div class=\'fallback\'&gt;Now, for&lt;br/&gt;&lt;em&gt;tomorrow.&lt;/em&gt;&lt;/div&gt;'" />
-        </div>
+        <a class="caseImg caseVideo" href="https://vimeo.com/325841188" target="_blank" rel="noopener" aria-label="Watch the Baker Tilly brand film on Vimeo">
+          <iframe src="https://player.vimeo.com/video/325841188?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&autopause=0" allow="autoplay" title="Baker Tilly — brand film"></iframe>
+          <span class="playBadge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            Open on Vimeo
+          </span>
+        </a>
         <div>
           <div class="caseMeta"><span>2017–2018 · BrandPie</span><span>Professional services</span><span>Global</span></div>
           <p class="caseTagline">Now, for <em>tomorrow.</em></p>
