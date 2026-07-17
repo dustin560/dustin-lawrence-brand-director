@@ -495,7 +495,7 @@
   }
   footer.foot .marks { display: flex; gap: 12px; align-items: center; }
 
-  /* Tagline strip */
+  /* Tagline strip (kept for legacy uses) */
   .taglineStrip {
     text-align: center; padding: 40px 0;
     border-top: 1px solid var(--w-04);
@@ -503,6 +503,71 @@
   }
   .taglineStrip p { font-size: 22px; font-weight: 700; color: var(--white); font-style: italic; max-width: 800px; margin: 0 auto; line-height: 1.4; letter-spacing: -0.01em; }
   .taglineStrip p em { color: var(--blaze); font-style: italic; }
+
+  /* Point of View strip — the manifesto between hero and Approach */
+  .povStrip {
+    padding: 80px 0;
+    border-top: 1px solid var(--w-04);
+    border-bottom: 1px solid var(--w-04);
+    position: relative;
+    overflow: hidden;
+  }
+  .povStrip::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .povStrip::after {
+    content: ''; position: absolute; z-index: 0;
+    left: 50%; top: 50%; width: 800px; height: 800px;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border: 1px solid rgba(255,107,43,0.05);
+    pointer-events: none;
+  }
+  .povInner { max-width: 940px; margin: 0 auto; position: relative; z-index: 2; padding: 0 24px; }
+  .povInner .overline { text-align: center; margin-bottom: 28px; }
+  .povHead {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(32px, 4.2vw, 52px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    text-align: center;
+    margin: 0 0 40px;
+  }
+  .povHead em { color: var(--blaze); font-style: normal; }
+  .povBody { max-width: 720px; margin: 0 auto 32px; }
+  .povBody p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--w-70);
+    margin: 0 0 20px;
+    font-weight: 400;
+  }
+  .povBody p:last-child { margin-bottom: 0; }
+  .povBody p b { color: var(--white); font-weight: 700; }
+  .povBody p em { color: var(--blaze); font-style: normal; font-weight: 500; }
+  .povLinks {
+    display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: center;
+    padding-top: 28px;
+    border-top: 1px solid var(--w-04);
+    max-width: 720px; margin: 0 auto;
+  }
+  .povLinks a {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 700; color: var(--blaze);
+    border-bottom: 1px solid rgba(255,107,43,0.3);
+    padding-bottom: 4px;
+    transition: color .2s, border-color .2s;
+  }
+  .povLinks a:hover { color: var(--amber); border-color: var(--amber); }
+  .povLinks a .arrow { font-size: 14px; opacity: 0.7; }
 </style>
 </head>
 <body>
@@ -521,6 +586,7 @@
       </div>
     </div>
     <nav class="topnav">
+      <a href="#pov">POV</a>
       <a href="#approach">Approach</a>
       <a href="#work">Work</a>
       <a href="#capability">Capability</a>
@@ -606,13 +672,26 @@
   </div>
 </section>
 
-<!-- TAGLINE STRIP -->
-<div class="taglineStrip">
-  <div class="container">
-    <p>Most organisations don't have a purpose problem. <em>They have an alignment problem.</em></p>
-    <div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--w-25); margin-top: 16px; font-weight: 600;">Build a brand that moves <span style="color: var(--blaze);">people</span> · <span style="color: var(--blaze);">markets</span> · <span style="color: var(--blaze);">decisions</span></div>
+<!-- POINT OF VIEW STRIP -->
+<section id="pov" class="povStrip">
+  <div class="povInner">
+    <div class="overline">A Point of View · July 2026</div>
+    <p class="povHead">Most brands don't have an awareness problem.<br/><em>They have a self-awareness problem.</em></p>
+    <div class="povBody">
+      <p>When every organisation rents the same AI, intelligence stops being an edge. What's left is what always distinguished the leaders you rated most — not the cleverest, but the ones who knew how they actually landed. That's <b>emotional intelligence</b>. When it belongs to an organisation rather than a person, it has a different name. <em>Trust.</em></p>
+      <p>And AI is making it worse before it makes it better: it polishes what an organisation <em>says</em> without changing what stakeholders <em>experience</em>. The say–do gap widens. Edelman's 2026 barometer put it plainly — trust has moved from <em>"how I feel about a brand"</em> to <em>"how I think a brand feels about me."</em> That is not an awareness question. It's a self-awareness question.</p>
+      <p>Nothing here is new. Aristotle knew. Drucker knew. What's new is that it's now measurable — which finally makes it a capability, not a vibe. And that Echo Research puts organisational trust at <b>£841bn — 28% of the FTSE 350's market cap.</b> The most intelligent business in the room is no longer the smartest. It's the most self-aware.</p>
+    </div>
+    <div class="povLinks">
+      <a href="https://www.linkedin.com/pulse/age-ai-smartest-business-isnt-most-intelligent-dustin-lawrence-1qyde/" target="_blank" rel="noopener">
+        Read the full argument &nbsp;<span class="arrow">↗</span>
+      </a>
+      <a href="https://missionctrl.agency/insights/the-story-has-left-the-building" target="_blank" rel="noopener">
+        How it plays out in brand &nbsp;<span class="arrow">↗</span>
+      </a>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- APPROACH -->
 <section id="approach" class="section bgGrid">
