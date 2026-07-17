@@ -1,0 +1,42 @@
+# MissionCTRL — Dustin Lawrence CV
+# Netlify configuration
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "interest-cohort=()"
+
+# Cache the PDF aggressively — it changes infrequently
+[[headers]]
+  for = "/Dustin-Lawrence-CV.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+    Content-Disposition = "inline; filename=\"Dustin-Lawrence-CV.pdf\""
+
+# Cache HTML for a short window
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Pretty URL for the CV download (so it can also be shared as /cv.pdf or /cv)
+[[redirects]]
+  from = "/cv.pdf"
+  to = "/Dustin-Lawrence-CV.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/cv"
+  to = "/Dustin-Lawrence-CV.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/download"
+  to = "/Dustin-Lawrence-CV.pdf"
+  status = 200
