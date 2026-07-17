@@ -4,7 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Dustin Lawrence — Founder, MissionCTRL</title>
-<meta name="description" content="Founder, MissionCTRL. Building TrustOS &amp; Unicorn. Brand strategist who thinks like an activist. 20 years across five continents." />
+<meta name="description" content="Founder, MissionCTRL. Building TrustOS &amp; Unicorn. The smartest business isn't the most intelligent — it's the most self-aware. Twenty years closing the say–do gap." />
+<meta name="theme-color" content="#0a0f1a" />
+<!-- Social preview -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dustin-lawrence-brand-director.netlify.app/" />
+<meta property="og:title" content="Dustin Lawrence — Founder, MissionCTRL" />
+<meta property="og:description" content="The smartest business isn't the most intelligent. It's the most self-aware. Twenty years, five continents, one method: The Brand Effect." />
+<meta property="og:image" content="https://dustin-lawrence-brand-director.netlify.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dustin Lawrence — Founder, MissionCTRL" />
+<meta name="twitter:description" content="The smartest business isn't the most intelligent. It's the most self-aware." />
+<meta name="twitter:image" content="https://dustin-lawrence-brand-director.netlify.app/og-image.png" />
+<!-- DL. favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='8' fill='%230a0f1a' stroke='%23ff6b2b' stroke-opacity='0.6' stroke-width='3'/%3E%3Ctext x='30' y='43' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='28' letter-spacing='-2' fill='%23ffffff' text-anchor='middle'%3EDL%3C/text%3E%3Ccircle cx='50' cy='41' r='4' fill='%23ff6b2b'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -28,9 +43,9 @@
     --white: #ffffff;
     --w-90: rgba(255,255,255,0.90);
     --w-70: rgba(255,255,255,0.70);
-    --w-50: rgba(255,255,255,0.50);
-    --w-35: rgba(255,255,255,0.35);
-    --w-25: rgba(255,255,255,0.25);
+    --w-50: rgba(255,255,255,0.62);  /* raised from .50 for WCAG-comfortable body text */
+    --w-35: rgba(255,255,255,0.46);  /* raised from .35 */
+    --w-25: rgba(255,255,255,0.38);  /* raised from .25 — labels stay quiet but legible */
     --w-15: rgba(255,255,255,0.15);
     --w-08: rgba(255,255,255,0.08);
     --w-04: rgba(255,255,255,0.04);
@@ -568,6 +583,109 @@
   }
   .povLinks a:hover { color: var(--amber); border-color: var(--amber); }
   .povLinks a .arrow { font-size: 14px; opacity: 0.7; }
+
+  /* ============ The spine — daisy-chained thread: POV → Principles → Brand Effect ============ */
+  .thread {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 40px 0 0; position: relative; z-index: 2;
+  }
+  .thread .tLine {
+    width: 1px; height: 56px;
+    background: linear-gradient(180deg, rgba(255,107,43,0), var(--blaze));
+  }
+  .thread .tDot { width: 7px; height: 7px; border-radius: 50%; background: var(--blaze); margin-top: -1px; box-shadow: 0 0 12px rgba(255,107,43,0.6); }
+  .handoff {
+    text-align: center; max-width: 640px; margin: 28px auto 0;
+    font-size: 15px; line-height: 1.6; color: var(--w-50); font-weight: 400;
+    position: relative; z-index: 2; padding: 0 24px;
+  }
+  .handoff em { color: var(--blaze); font-style: normal; font-weight: 600; }
+  .handoff b { color: var(--white); font-weight: 700; }
+
+  /* Brand Effect band — frame three of the chain */
+  .effectBand { margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--w-04); }
+  .effectBand .ebHead { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin-bottom: 10px; }
+  .effectBand h3 { font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; letter-spacing: -0.03em; margin: 0; }
+  .effectBand h3 em { color: var(--blaze); font-style: normal; }
+  .effectBand .ebSub { font-size: 13px; color: var(--w-35); max-width: 640px; margin-bottom: 32px; line-height: 1.65; }
+  .effectSteps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .effectStep {
+    position: relative;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--w-04);
+    border-radius: 10px;
+    padding: 22px 20px 20px;
+    transition: border-color .25s, background .25s;
+  }
+  .effectStep:hover { border-color: rgba(255,107,43,0.2); }
+  .effectStep .esNum { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--w-25); letter-spacing: 0.12em; margin-bottom: 12px; }
+  .effectStep h4 { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .effectStep p { font-size: 12.5px; line-height: 1.6; color: var(--w-50); margin: 0 0 14px; }
+  .effectStep .esBrand {
+    font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700;
+    padding-top: 12px; border-top: 1px solid var(--w-04); display: block;
+  }
+  .effectStep:not(:last-child)::after {
+    content: '→'; position: absolute; right: -13px; top: 50%; transform: translateY(-50%);
+    color: rgba(255,107,43,0.5); font-size: 15px; z-index: 3;
+  }
+  .effectStep.accBlaze h4 { color: var(--blaze); }
+  .effectStep.accViolet h4 { background: linear-gradient(90deg, var(--unicorn-violet), var(--unicorn-magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .effectStep.accTeal h4 { color: var(--trust-cool); }
+  .effectStep.accAmber h4 { color: var(--amber); }
+  .effectStep .esBrand.bViolet { color: var(--unicorn-violet); }
+  .effectStep .esBrand.bBlaze { color: var(--blaze); }
+  .effectStep .esBrand.bTeal { color: var(--trust-cool); }
+  .effectStep .esBrand.bAmber { color: var(--amber); }
+  @media (max-width: 880px) {
+    .effectSteps { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .effectStep:not(:last-child)::after { display: none; }
+  }
+  @media (max-width: 520px) { .effectSteps { grid-template-columns: 1fr; } }
+
+  /* ============ Writing — the live thinking ============ */
+  .writingList { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  a.writingCard {
+    display: flex; flex-direction: column; gap: 0;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--w-04);
+    border-radius: 12px;
+    padding: 28px;
+    border-bottom: 1px solid var(--w-04);
+    transition: border-color .25s, background .25s, transform .2s;
+  }
+  a.writingCard:hover { border-color: rgba(255,107,43,0.22); background: rgba(255,107,43,0.03); transform: translateY(-2px); color: var(--white); }
+  .writingCard .wMeta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--blaze); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; font-weight: 500; }
+  .writingCard h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; margin: 0 0 10px; color: var(--white); }
+  .writingCard p { font-size: 13px; line-height: 1.65; color: var(--w-50); margin: 0; flex-grow: 1; }
+  .writingCard .wRead { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: var(--w-35); margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--w-04); transition: color .2s; }
+  a.writingCard:hover .wRead { color: var(--blaze); }
+  .writingFoot { margin-top: 28px; font-size: 12px; color: var(--w-35); }
+  .writingFoot a { color: var(--w-50); border-bottom-color: var(--w-15); font-weight: 600; }
+  .writingFoot a:hover { color: var(--blaze); }
+  @media (max-width: 880px) { .writingList { grid-template-columns: 1fr; gap: 14px; } }
+
+  /* Capability proof lines (replaces false-precision bars) */
+  .capRow .cName .cProof { display: block; font-size: 10.5px; color: var(--w-35); font-weight: 400; margin-top: 3px; letter-spacing: 0.01em; }
+  .capNote { font-size: 11px; color: var(--w-35); margin-top: 20px; line-height: 1.6; }
+  .capNote em { color: var(--blaze); font-style: normal; font-weight: 600; }
+
+  /* ============ Motion — restrained, brand-true ============ */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+  .reveal.inview { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: .08s; } .reveal.d2 { transition-delay: .16s; } .reveal.d3 { transition-delay: .24s; } .reveal.d4 { transition-delay: .32s; }
+  @keyframes rippleDrift {
+    0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%,-50%) scale(1.045); opacity: 0.75; }
+  }
+  .hero .ripple1 { animation: rippleDrift 14s ease-in-out infinite; }
+  .hero .ripple2 { animation: rippleDrift 11s ease-in-out infinite 1.2s; }
+  .hero .ripple3 { animation: rippleDrift 9s ease-in-out infinite 2.1s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero .ripple1, .hero .ripple2, .hero .ripple3 { animation: none; }
+    html { scroll-behavior: auto; }
+  }
 </style>
 </head>
 <body>
@@ -592,6 +710,7 @@
       <a href="#capability">Capability</a>
       <a href="#cases">Cases</a>
       <a href="#arc">Career</a>
+      <a href="#writing">Writing</a>
       <a href="#contact">Contact</a>
       <a href="Dustin-Lawrence-CV.pdf" download class="pdfBtn" aria-label="Download CV as PDF">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -616,10 +735,10 @@
   </div>
   <div class="container">
     <div class="overline">Curriculum Vitae · v2026</div>
-    <h1 class="titleXL">I turn complex strategies into <span class="accent">compelling stories.</span></h1>
+    <h1 class="titleXL">The smartest business isn't the most intelligent. <span class="accent">It's the most self&#8209;aware.</span></h1>
     <p class="strap">
       <b>Founder, MissionCTRL. Building TrustOS &amp; Unicorn.</b><br/>
-      Brand strategist who thinks like an activist. Twenty years across five continents and twelve sectors — closing the gap between what an organisation believes, says, and does. The methodology has a name now: <b>The Brand Effect.</b>
+      Twenty years, five continents and twelve sectors spent turning complex strategies into compelling stories — and learning the story was never the point. I think like an activist: someone whose actions match their beliefs. That's the work — closing the gap between what an organisation believes, says and does. It has a name now: <b>The Brand Effect.</b>
     </p>
     <div class="accentLine" style="margin-bottom: 56px;"></div>
 
@@ -631,7 +750,7 @@
         <div><span class="n"><span class="gradientText">11</span></span><span class="l">Awards</span></div>
       </div>
       <div class="portfolio">
-        <div class="label">The portfolio · click to visit</div>
+        <div class="label">One thesis · three altitudes · click to visit</div>
         <div class="brands">
           <a class="one brandLink" href="https://missionctrl.agency" target="_blank" rel="noopener" aria-label="Visit MissionCTRL">
             <svg width="22" height="27" viewBox="0 0 120 148" fill="none" aria-hidden="true">
@@ -640,7 +759,7 @@
             </svg>
             <div>
               <span class="label2" style="color: var(--blaze);">Mission<span style="color: var(--white);">CTRL</span></span>
-              <span class="sub">Enterprise brand advisory</span>
+              <span class="sub">Aligns belief &amp; behaviour · enterprise</span>
             </div>
             <span class="extLink">↗</span>
           </a>
@@ -651,7 +770,7 @@
             </svg>
             <div>
               <span class="label2"><span style="color: var(--white);">Trust</span><span style="color: var(--trust-cool);">OS</span></span>
-              <span class="sub">Trust measurement intelligence</span>
+              <span class="sub">Measures the trust it earns</span>
             </div>
             <span class="extLink">↗</span>
           </a>
@@ -662,7 +781,7 @@
             </svg>
             <div>
               <span class="label2 gradientTextViolet">Unicorn</span>
-              <span class="sub">Fractional brand partner</span>
+              <span class="sub">Builds the belief · growing businesses</span>
             </div>
             <span class="extLink">↗</span>
           </a>
@@ -672,15 +791,15 @@
   </div>
 </section>
 
-<!-- POINT OF VIEW STRIP -->
+<!-- POINT OF VIEW STRIP — frame one of the chain -->
 <section id="pov" class="povStrip">
   <div class="povInner">
-    <div class="overline">A Point of View · July 2026</div>
+    <div class="overline">00 — The Lens · July 2026</div>
     <p class="povHead">Most brands don't have an awareness problem.<br/><em>They have a self-awareness problem.</em></p>
     <div class="povBody">
       <p>When every organisation rents the same AI, intelligence stops being an edge. What's left is what always distinguished the leaders you rated most — not the cleverest, but the ones who knew how they actually landed. That's <b>emotional intelligence</b>. When it belongs to an organisation rather than a person, it has a different name. <em>Trust.</em></p>
       <p>And AI is making it worse before it makes it better: it polishes what an organisation <em>says</em> without changing what stakeholders <em>experience</em>. The say–do gap widens. Edelman's 2026 barometer put it plainly — trust has moved from <em>"how I feel about a brand"</em> to <em>"how I think a brand feels about me."</em> That is not an awareness question. It's a self-awareness question.</p>
-      <p>Nothing here is new. Aristotle knew. Drucker knew. What's new is that it's now measurable — which finally makes it a capability, not a vibe. And that Echo Research puts organisational trust at <b>£841bn — 28% of the FTSE 350's market cap.</b> The most intelligent business in the room is no longer the smartest. It's the most self-aware.</p>
+      <p>Nothing here is new. Aristotle knew. Drucker knew. What's new is that it's now measurable — which finally makes it a capability, not a vibe. And that Echo Research puts organisational trust at <b>£841bn — 28% of the FTSE 350's market cap.</b> EQ, at business scale, is a line on the balance sheet.</p>
     </div>
     <div class="povLinks">
       <a href="https://www.linkedin.com/pulse/age-ai-smartest-business-isnt-most-intelligent-dustin-lawrence-1qyde/" target="_blank" rel="noopener">
@@ -690,6 +809,8 @@
         How it plays out in brand &nbsp;<span class="arrow">↗</span>
       </a>
     </div>
+    <div class="handoff reveal">So how does an organisation become self-aware? The same way a person does. <em>Principles it actually lives.</em></div>
+    <div class="thread" aria-hidden="true"><div class="tLine"></div><div class="tDot"></div></div>
   </div>
 </section>
 
@@ -719,11 +840,49 @@
         <p>Story without structure is just noise. I work in evidence — interviews, audits, data — then translate the mess into a single-minded idea both leadership and the market can stand on.</p>
         <div class="ev"><b>Baker Tilly</b> — unified 120 firms behind one global brand. 9% growth in year one. Best in a decade.</div>
       </div>
-      <div class="card cardOrange principle">
+      <div class="card cardOrange principle reveal d3">
         <div class="num">/ 03</div>
         <h3><span class="accent">Creative.</span></h3>
         <p>The best strategy still has to make someone want to lean in. I guide identity, voice, naming and architecture so the idea doesn't die in the deck — it lives in the room.</p>
         <div class="ev"><b>Adenza</b> — purpose-led positioning for a fintech merger. Gold Transform Award (twice). Sold to Nasdaq for $10.5bn.</div>
+      </div>
+    </div>
+
+    <div class="handoff reveal">Principles are personal. To work at business scale they need a method — <b>and a measure.</b></div>
+    <div class="thread" aria-hidden="true"><div class="tLine"></div><div class="tDot"></div></div>
+
+    <!-- THE BRAND EFFECT — frame three of the chain, and the map of the portfolio -->
+    <div class="effectBand">
+      <div class="ebHead reveal">
+        <div class="overline" style="margin-bottom:0;">The method</div>
+        <h3>The Brand Effect. <em>One thesis, three altitudes.</em></h3>
+      </div>
+      <p class="ebSub reveal">Self-awareness, operationalised. Each stage is a discipline — and each of the three businesses owns the altitude it's built for.</p>
+      <div class="effectSteps">
+        <div class="effectStep accViolet reveal d1">
+          <div class="esNum">/ 01</div>
+          <h4>Believe</h4>
+          <p>Name what you actually stand for — not what the deck says. Belief is the bridge between knowing who you are and acting like it.</p>
+          <span class="esBrand bViolet">Unicorn · growing businesses</span>
+        </div>
+        <div class="effectStep accBlaze reveal d2">
+          <div class="esNum">/ 02</div>
+          <h4>Align</h4>
+          <p>Close the say–do gap. Strategy, story, identity and behaviour pulling in one direction — across every stakeholder.</p>
+          <span class="esBrand bBlaze">MissionCTRL · enterprise</span>
+        </div>
+        <div class="effectStep accTeal reveal d3">
+          <div class="esNum">/ 03</div>
+          <h4>Prove</h4>
+          <p>Measure the trust the alignment earns — Clarity, Connection, Confidence — as a leading indicator, not a lagging opinion.</p>
+          <span class="esBrand bTeal">TrustOS · trust intelligence</span>
+        </div>
+        <div class="effectStep accAmber reveal d4">
+          <div class="esNum">/ 04</div>
+          <h4>Move</h4>
+          <p>Compound it. Trust built, kept and measured becomes momentum the market can feel. Brand, made to move.</p>
+          <span class="esBrand bAmber">The portfolio · together</span>
+        </div>
       </div>
     </div>
   </div>
@@ -806,30 +965,31 @@
       <div>
         <h4 style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--blaze); margin: 0 0 20px; font-weight: 700;">Strategic capability</h4>
         <div class="capList">
-          <div class="capRow"><span class="cName">Brand purpose &amp; positioning</span><span class="cBar"><span style="width:98%"></span></span><span class="cYears">20y</span></div>
-          <div class="capRow"><span class="cName">Strategic narrative &amp; story</span><span class="cBar"><span style="width:95%"></span></span><span class="cYears">20y</span></div>
-          <div class="capRow"><span class="cName">Stakeholder research &amp; insight</span><span class="cBar"><span style="width:92%"></span></span><span class="cYears">19y</span></div>
-          <div class="capRow"><span class="cName">Brand architecture &amp; portfolio</span><span class="cBar"><span style="width:88%"></span></span><span class="cYears">18y</span></div>
+          <div class="capRow"><span class="cName">Brand purpose &amp; positioning<span class="cProof">Exxaro's purpose still in market, 20 years on</span></span><span class="cBar"><span style="width:100%"></span></span><span class="cYears">20y</span></div>
+          <div class="capRow"><span class="cName">Strategic narrative &amp; story</span><span class="cBar"><span style="width:100%"></span></span><span class="cYears">20y</span></div>
+          <div class="capRow"><span class="cName">Stakeholder research &amp; insight</span><span class="cBar"><span style="width:95%"></span></span><span class="cYears">19y</span></div>
+          <div class="capRow"><span class="cName">Brand architecture &amp; portfolio<span class="cProof">Baker Tilly — 120 firms, one brand</span></span><span class="cBar"><span style="width:90%"></span></span><span class="cYears">18y</span></div>
           <div class="capRow"><span class="cName">Workshop design &amp; facilitation</span><span class="cBar"><span style="width:90%"></span></span><span class="cYears">18y</span></div>
           <div class="capRow"><span class="cName">Brand engagement &amp; activation</span><span class="cBar"><span style="width:85%"></span></span><span class="cYears">17y</span></div>
-          <div class="capRow"><span class="cName">M&amp;A and merger integration</span><span class="cBar"><span style="width:78%"></span></span><span class="cYears">14y</span></div>
-          <div class="capRow"><span class="cName">Brand measurement &amp; tracking</span><span class="cBar"><span style="width:60%"></span></span><span class="cYears">6y</span></div>
+          <div class="capRow"><span class="cName">M&amp;A and merger integration<span class="cProof">Adenza — Gold ×2, sold to Nasdaq for $10.5bn</span></span><span class="cBar"><span style="width:70%"></span></span><span class="cYears">14y</span></div>
+          <div class="capRow"><span class="cName">Brand measurement &amp; tracking<span class="cProof">Now productised as TrustOS</span></span><span class="cBar"><span style="width:30%"></span></span><span class="cYears">6y</span></div>
         </div>
       </div>
       <div>
         <h4 style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--blaze); margin: 0 0 20px; font-weight: 700;">Creative guidance</h4>
         <div class="capList">
-          <div class="capRow"><span class="cName">Presentation &amp; pitch craft</span><span class="cBar"><span style="width:92%"></span></span><span class="cYears">20y</span></div>
-          <div class="capRow"><span class="cName">Brand playbooks &amp; guidelines</span><span class="cBar"><span style="width:84%"></span></span><span class="cYears">17y</span></div>
-          <div class="capRow"><span class="cName">Naming &amp; verbal identity</span><span class="cBar"><span style="width:82%"></span></span><span class="cYears">16y</span></div>
-          <div class="capRow"><span class="cName">Visual identity direction</span><span class="cBar"><span style="width:78%"></span></span><span class="cYears">16y</span></div>
-          <div class="capRow"><span class="cName">Voice &amp; tone systems</span><span class="cBar"><span style="width:80%"></span></span><span class="cYears">15y</span></div>
-          <div class="capRow"><span class="cName">Campaign &amp; comms planning</span><span class="cBar"><span style="width:75%"></span></span><span class="cYears">14y</span></div>
-          <div class="capRow"><span class="cName">Digital &amp; content strategy</span><span class="cBar"><span style="width:72%"></span></span><span class="cYears">13y</span></div>
-          <div class="capRow"><span class="cName">Experience &amp; touchpoint design</span><span class="cBar"><span style="width:70%"></span></span><span class="cYears">12y</span></div>
+          <div class="capRow"><span class="cName">Presentation &amp; pitch craft</span><span class="cBar"><span style="width:100%"></span></span><span class="cYears">20y</span></div>
+          <div class="capRow"><span class="cName">Brand playbooks &amp; guidelines</span><span class="cBar"><span style="width:85%"></span></span><span class="cYears">17y</span></div>
+          <div class="capRow"><span class="cName">Naming &amp; verbal identity<span class="cProof">Covestro · Primetals · Frontline AIDS</span></span><span class="cBar"><span style="width:80%"></span></span><span class="cYears">16y</span></div>
+          <div class="capRow"><span class="cName">Visual identity direction</span><span class="cBar"><span style="width:80%"></span></span><span class="cYears">16y</span></div>
+          <div class="capRow"><span class="cName">Voice &amp; tone systems<span class="cProof">Fidelity International — one global voice</span></span><span class="cBar"><span style="width:75%"></span></span><span class="cYears">15y</span></div>
+          <div class="capRow"><span class="cName">Campaign &amp; comms planning</span><span class="cBar"><span style="width:70%"></span></span><span class="cYears">14y</span></div>
+          <div class="capRow"><span class="cName">Digital &amp; content strategy</span><span class="cBar"><span style="width:65%"></span></span><span class="cYears">13y</span></div>
+          <div class="capRow"><span class="cName">Experience &amp; touchpoint design</span><span class="cBar"><span style="width:60%"></span></span><span class="cYears">12y</span></div>
         </div>
       </div>
     </div>
+    <p class="capNote">Bar length is <em>years practised</em>, on a twenty-year scale. No invented percentages — evidence-led means the CV plays by the same rules.</p>
 
     <div style="margin-top: 56px;">
       <h4 style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--blaze); margin: 0 0 8px; font-weight: 700;">Sectors shaped</h4>
@@ -855,7 +1015,7 @@
       <!-- Frontline AIDS -->
       <article class="caseCard">
         <a class="caseImg caseVideo" href="https://vimeo.com/317227281" target="_blank" rel="noopener" aria-label="Watch the Frontline AIDS brand film on Vimeo">
-          <iframe src="https://player.vimeo.com/video/317227281?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&autopause=0" allow="autoplay" title="Frontline AIDS — brand film"></iframe>
+          <iframe data-lazy-src="https://player.vimeo.com/video/317227281?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&autopause=0" allow="autoplay" title="Frontline AIDS — brand film"></iframe>
           <span class="playBadge" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="14" height="14"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
             Open on Vimeo
@@ -881,7 +1041,7 @@
       <!-- Adenza -->
       <article class="caseCard">
         <div class="caseImg">
-          <img src="https://emperor.works/media/4ibbsnuy/splash-image.jpg" alt="Adenza brand identity" onerror="this.parentElement.innerHTML='&lt;div class=\'fallback\'&gt;&lt;em&gt;Platform&lt;/em&gt; to opportunity.&lt;/div&gt;'" />
+          <img src="https://emperor.works/media/4ibbsnuy/splash-image.jpg" alt="Adenza brand identity" loading="lazy" onerror="this.parentElement.innerHTML='&lt;div class=\'fallback\'&gt;&lt;em&gt;Platform&lt;/em&gt; to opportunity.&lt;/div&gt;'" />
         </div>
         <div>
           <div class="caseMeta"><span>2021 · Emperor</span><span>FinTech / M&amp;A</span><span>North America</span></div>
@@ -903,7 +1063,7 @@
       <!-- Baker Tilly -->
       <article class="caseCard">
         <a class="caseImg caseVideo" href="https://vimeo.com/325841188" target="_blank" rel="noopener" aria-label="Watch the Baker Tilly brand film on Vimeo">
-          <iframe src="https://player.vimeo.com/video/325841188?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&autopause=0" allow="autoplay" title="Baker Tilly — brand film"></iframe>
+          <iframe data-lazy-src="https://player.vimeo.com/video/325841188?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&autopause=0" allow="autoplay" title="Baker Tilly — brand film"></iframe>
           <span class="playBadge" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="14" height="14"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
             Open on Vimeo
@@ -929,7 +1089,7 @@
       <!-- ICIS -->
       <article class="caseCard">
         <a class="caseImg caseVideo" href="https://youtu.be/CX8zLmfZsUY" target="_blank" rel="noopener" aria-label="Watch ICIS — Shaping the world video">
-          <img src="https://img.youtube.com/vi/CX8zLmfZsUY/maxresdefault.jpg" alt="ICIS — Shaping the world (video)" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/CX8zLmfZsUY/hqdefault.jpg';" />
+          <img src="https://img.youtube.com/vi/CX8zLmfZsUY/maxresdefault.jpg" alt="ICIS — Shaping the world (video)" loading="lazy" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/CX8zLmfZsUY/hqdefault.jpg';" />
           <span class="playBadge" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="14" height="14"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
             Watch
@@ -954,7 +1114,7 @@
       <!-- Exxaro -->
       <article class="caseCard">
         <div class="caseImg caseVideo">
-          <video src="https://www.exxaro.com/media/h2wm0atf/exxaro-timeline.mp4" autoplay loop muted playsinline preload="metadata"></video>
+          <video data-lazy-src="https://www.exxaro.com/media/h2wm0atf/exxaro-timeline.mp4" autoplay loop muted playsinline preload="none"></video>
         </div>
         <div>
           <div class="caseMeta"><span>2006 · HKLM</span><span>Energy &amp; resources</span><span>South Africa</span></div>
@@ -1108,6 +1268,23 @@
   </div>
 </section>
 
+<!-- WRITING — the thinking, live -->
+<section id="writing" class="section bgGrid">
+  <div class="container">
+    <div class="secHead">
+      <div class="num">07</div>
+      <div>
+        <div class="overline">07 — Writing</div>
+        <h2 class="titleLG">The thinking, <em>live.</em></h2>
+        <div class="sub">The POV above isn't a slogan — it's an argument I keep making in public. Latest pieces below.</div>
+        <div class="accentLine"></div>
+      </div>
+    </div>
+    <div class="writingList" id="writingList"></div>
+    <p class="writingFoot">More as it lands — follow along on <a href="https://www.linkedin.com/in/dustinclawrence/" target="_blank" rel="noopener">LinkedIn</a> or via <a href="https://missionctrl.agency" target="_blank" rel="noopener">MissionCTRL Insights</a>.</p>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="section bgGrid">
   <div class="ripple" style="right: 20%; top: 50%; width: 600px; height: 600px; transform: translate(50%,-50%); border-color: rgba(255,107,43,0.04);"></div>
@@ -1115,7 +1292,7 @@
   <div class="container">
     <div class="contactGrid">
       <div>
-        <div class="overline">07 — Contact</div>
+        <div class="overline">08 — Contact</div>
         <h3>Lead as One. <em>Move the Many.</em></h3>
         <p>Open to fractional partnerships, strategy directorships, agency collaborations and the occasional teaching gig.</p>
         <p style="color: var(--w-35); font-size: 13px; margin-top: 20px; letter-spacing: 0.04em;">The Brand Effect starts with a conversation. Not a pitch. Not an audit. A conversation about where trust is building, where it's leaking, and what to do about it.</p>
@@ -1140,8 +1317,8 @@
         <ul>
           <li><a href="https://www.linkedin.com/in/dustinclawrence/" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://missionctrl.agency" target="_blank" rel="noopener">MissionCTRL</a></li>
+          <li><a href="https://trustos.missionctrl.agency" target="_blank" rel="noopener">TrustOS</a></li>
           <li><a href="https://unicornunited.co/" target="_blank" rel="noopener">Unicorn</a></li>
-          <li><a href="https://www.brandpie.com/thinking/magpie2-paging-dr-google" target="_blank" rel="noopener">Writing — Paging Dr Google</a></li>
         </ul>
       </div>
     </div>
@@ -1397,6 +1574,92 @@ buildViz();
 buildYearAxis();
 buildSectorGrid();
 applyFilters();
+
+/* ============ WRITING — the live thinking ============
+   To publish a new piece: add an entry to the TOP of this list. Newest three show.
+   If a Substack ever exists, swap this array for a fetch of its RSS via a Netlify function. */
+const writing = [
+  {
+    meta: "LinkedIn Pulse · Jul 2026",
+    title: "In the age of AI, the smartest business isn't the most intelligent.",
+    hook: "When every organisation rents the same intelligence, the edge moves to self-awareness. The case for EQ as a business capability — and trust as its measure.",
+    url: "https://www.linkedin.com/pulse/age-ai-smartest-business-isnt-most-intelligent-dustin-lawrence-1qyde/"
+  },
+  {
+    meta: "MissionCTRL Insights",
+    title: "The Story Has Left the Building",
+    hook: "Storytelling was the answer for twenty years. Then everyone learned to tell one. What brands need now isn't a better story — it's a truer one.",
+    url: "https://missionctrl.agency/insights/the-story-has-left-the-building"
+  },
+  {
+    meta: "BrandPie Magpie · Archive",
+    title: "Paging Dr Google",
+    hook: "3am, one gammy foot, and a search engine determined to diagnose the worst. On self-diagnosis, panic — and why more information isn't more insight.",
+    url: "https://www.brandpie.com/thinking/magpie2-paging-dr-google"
+  }
+];
+const writingList = document.getElementById('writingList');
+if (writingList) {
+  writing.slice(0, 3).forEach((w, i) => {
+    const a = document.createElement('a');
+    a.className = 'writingCard reveal d' + (i + 1);
+    a.href = w.url; a.target = '_blank'; a.rel = 'noopener';
+    a.innerHTML = `<div class="wMeta">${w.meta}</div><h3>${w.title}</h3><p>${w.hook}</p><div class="wRead">Read &nbsp;↗</div>`;
+    writingList.appendChild(a);
+  });
+}
+
+/* ============ Lazy media — video iframes & mp4 load only when near viewport ============ */
+const lazyMedia = document.querySelectorAll('[data-lazy-src]');
+if ('IntersectionObserver' in window) {
+  const mediaIO = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      el.src = el.dataset.lazySrc;
+      el.removeAttribute('data-lazy-src');
+      if (el.tagName === 'VIDEO') { el.load(); el.play().catch(() => {}); }
+      mediaIO.unobserve(el);
+    });
+  }, { rootMargin: '400px 0px' });
+  lazyMedia.forEach(el => mediaIO.observe(el));
+} else {
+  lazyMedia.forEach(el => { el.src = el.dataset.lazySrc; });
+}
+
+/* ============ Scroll reveals — restrained, once, and honest about reduced motion ============ */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.secHead, .principle, .caseCard, .award, .arcRow, .capRow, .sectorTile, .contactGrid > div')
+  .forEach(el => el.classList.add('reveal'));
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  const revealIO = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('inview'); revealIO.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+  document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('inview'));
+}
+
+/* ============ Hero stats count-up ============ */
+if (!reduceMotion) {
+  document.querySelectorAll('.heroBio .stats .n').forEach(n => {
+    const target = n.querySelector('.gradientText') || n;
+    const raw = target.textContent.trim();
+    const num = parseInt(raw, 10);
+    if (isNaN(num)) return;
+    const suffix = raw.replace(String(num), '');
+    const dur = 1300, t0 = performance.now();
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      target.textContent = Math.round(ease(p) * num) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
 </script>
 </body>
 </html>
