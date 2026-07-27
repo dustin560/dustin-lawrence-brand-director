@@ -61,12 +61,11 @@
   
 
   /* ===== THE GEOMETRY — vision, drawn as understanding arrives ===== */
-  .geo :is(circle,path,polygon,line,ellipse,rect){fill:none;stroke:var(--gold);stroke-width:1.1;vector-effect:non-scaling-stroke;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 2.1s cubic-bezier(.45,0,.2,1)}
-  .geo .fill{fill:var(--gold);stroke:none;opacity:0;transition:opacity .9s ease 1.6s}
-  .drawn .geo :is(circle,path,polygon,line,ellipse,rect){stroke-dashoffset:0}
-  .drawn .geo .fill{opacity:1}
-  .geo [style*="--i"]{transition-delay:calc(var(--i)*.3s)}
-  .drawn .geo [style*="--i"]{transition-delay:calc(var(--i)*.3s)}
+  .geo :is(circle,path,polygon,line,ellipse,rect){fill:none;stroke:var(--gold);stroke-width:1.1;vector-effect:non-scaling-stroke;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .65s cubic-bezier(.55,0,.6,1)} /* base = the undraw: imagination retracts, all strokes together */
+  .geo .fill{fill:var(--gold);stroke:none;opacity:0;transition:opacity .3s ease}
+  .geoFrame.inview .geo :is(circle,path,polygon,line,ellipse,rect){stroke-dashoffset:0;transition:stroke-dashoffset 2.1s cubic-bezier(.45,0,.2,1)} /* arrival = the slow draw */
+  .geoFrame.inview .geo .fill{opacity:1;transition:opacity .9s ease 1.6s}
+  .geoFrame.inview .geo [style*="--i"]{transition-delay:calc(var(--i)*.3s)}
 
   /* ===== COMING INTO AWARENESS — content resolves from blur ===== */
   .focus{filter:blur(10px);opacity:0;transform:translateY(14px);transition:filter .4s ease,opacity .4s ease,transform .4s ease} /* release — attention moves on quickly */
@@ -139,6 +138,8 @@
   .pov p em{font-family:'Fraunces',serif;font-style:italic;color:var(--pinkD)}
   .povLinks{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:40px}
   .povLinks a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--act);border-bottom:1px solid rgba(46,110,94,.3);padding-bottom:4px}
+  .pov p.hinge{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--inkSoft);margin-bottom:18px}
+  .mBridge{margin:20px auto 0;font-size:14px;color:var(--inkSoft);font-weight:300;line-height:1.8;max-width:520px}
 
   /* ===== THE QUESTIONS ===== */
   .qIntro{padding-bottom:20px}
@@ -271,7 +272,7 @@
   <div class="row">
     <div class="brand"><span class="dl">DL&#8202;<svg width="15" height="15" viewBox="0 0 100 100" style="transform:translateY(1px)"><circle cx="38" cy="50" r="27" fill="none" stroke="#b58a3e" stroke-width="6"/><circle cx="62" cy="50" r="27" fill="none" stroke="#b58a3e" stroke-width="6"/><circle cx="50" cy="50" r="6" fill="#b58a3e"/></svg></span><span class="who">Dustin Lawrence · Founder, MissionCTRL</span></div>
     <nav class="nav">
-      <a href="#pov">The Lens</a><a href="#questions">Questions</a><a href="#field">The Field</a><a href="#arc">Career</a><a href="#writing">Writing</a><a href="#contact">Contact</a>
+      <a href="#pov">Point of View</a><a href="#questions">Questions</a><a href="#field">The Field</a><a href="#arc">Career</a><a href="#writing">Writing</a><a href="#contact">Contact</a>
       <a class="pill" href="Dustin-Lawrence-CV.pdf" download>Download CV</a>
     </nav>
   </div>
@@ -315,15 +316,17 @@
 <section class="manifesto geoFrame">
   <div class="vesica" aria-hidden="true">
     <svg class="geo" viewBox="0 0 1150 760" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-      <g class="washG"><circle class="washB" cx="410" cy="380" r="330"/><circle class="washP" cx="740" cy="380" r="330"/></g>
+      <g class="washG"><circle class="washB" cx="410" cy="380" r="330"/><circle class="washP" cx="740" cy="380" r="330"/><text x="575" y="640" text-anchor="middle" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.4em;fill:#b58a3e;opacity:.8">THE LENS</text></g>
       <circle cx="410" cy="380" r="330" pathLength="100" style="--i:0"/>
       <circle cx="740" cy="380" r="330" pathLength="100" style="--i:1"/>
       <line x1="575" y1="95" x2="575" y2="665" pathLength="100" style="--i:3;opacity:.35"/>
     </svg>
   </div>
   <div class="mInner">
+    <div class="kick" style="color:var(--goldD);margin-bottom:18px;letter-spacing:.3em">The Perspective</div>
     <div class="mHead">Truth exists at <em>the tension.</em></div>
     <p class="mSub">Beyond black &amp; white. Beyond either, or. <b>Duality unlocks uniqueness.</b> <span class="fs"><svg width="12" height="12" viewBox="0 0 100 100" style="transform:translateY(1px)"><circle cx="38" cy="50" r="27" fill="none" stroke="#b58a3e" stroke-width="7"/><circle cx="62" cy="50" r="27" fill="none" stroke="#b58a3e" stroke-width="7"/><circle cx="50" cy="50" r="7" fill="#b58a3e"/></svg></span></p>
+    <p class="mBridge">Every organisation holds two truths — what it believes inside, and what the world experiences of it. The real one lives in the overlap. I've spent twenty years looking there.</p>
     <div class="mTags" aria-hidden="true"><span class="hd">Head — the thinking</span><span class="in">The integration</span><span class="ht">Heart — the feeling</span></div>
   </div>
 </section>
@@ -332,7 +335,8 @@
 <section id="pov" class="pov" style="text-align:center">
   <div class="wrap">
     <div class="sGeoHead geoFrame" aria-hidden="true"><svg class="geo" viewBox="0 0 100 100" width="44" height="44"><circle cx="50" cy="50" r="46" pathLength="100" style="--i:0"/><circle cx="50" cy="50" r="15" pathLength="100" style="--i:1"/><circle class="fill" cx="50" cy="50" r="3"/></svg></div>
-    <div class="secNum" style="justify-content:center"><span>00 — The Lens · July 2026</span></div>
+    <div class="secNum" style="justify-content:center"><span>00 — The Point of View · July 2026</span></div>
+    <p class="hinge">Look through that lens at the AI age, and one thing comes into focus:</p>
     <h2 class="t" style="margin:0 auto 40px;max-width:800px">Most brands don't have an awareness problem. <em>They have a self&#8209;awareness problem.</em></h2>
     <p>When every organisation rents the same AI, intelligence stops being an edge. What's left is what always distinguished the leaders you rated most — not the cleverest, but the ones who knew how they actually landed. That's <b>emotional intelligence</b>. When it belongs to an organisation rather than a person, it has a different name. <em>Trust.</em></p>
     <p>And AI is making it worse before it makes it better: it polishes what an organisation <em>says</em> without changing what stakeholders <em>experience</em>. The say–do gap widens. Edelman's 2026 barometer put it plainly — trust has moved from <em>"how I feel about a brand"</em> to <em>"how I think a brand feels about me."</em></p>
@@ -485,13 +489,15 @@
   <div class="wrap">
     <div class="secNum"><span>04 — Career arc</span><span class="rule"></span></div>
     <h2 class="t" style="margin-bottom:44px">From Johannesburg to <em>London</em>, via Sydney.</h2>
-    <div class="arcRow"><div class="y">2020 — Present</div><div><h4>MissionCTRL · TrustOS · Unicorn — Founder</h4><div class="r">London · Independent</div><div class="b">The portfolio: enterprise advisory (<b>MissionCTRL</b>), trust intelligence (<b>TrustOS</b>), fractional partnership (<b>Unicorn</b>). Recent: <b>Saudi Leadership Society</b> (Misk), <b>Geeks</b>, <b>ICIS</b> next-chapter plan, <b>DBX</b>, <b>Solmax</b> tracker. Plus CEO coaching.</div></div></div>
-    <div class="arcRow"><div class="y">2021 — 2022</div><div><h4>Emperor — Brand strategy director (contract)</h4><div class="r">London</div><div class="b">Led strategy on <b>Adenza</b> (Gold ×2; sold to Nasdaq, $10.5bn). Global research for Variowell. £600k of new-business pipeline.</div></div></div>
+    <div class="arcRow"><div class="y">2020 — Present</div><div><h4>MissionCTRL · TrustOS · Unicorn — Founder &amp; fractional brand director</h4><div class="r">London · Independent</div><div class="b">The portfolio: enterprise advisory (<b>MissionCTRL</b>), trust intelligence (<b>TrustOS</b>), fractional partnership (<b>Unicorn</b>). Recent: <b>Saudi Leadership Society</b> (Misk), <b>Geeks</b>, <b>ICIS</b> next-chapter plan, <b>DBX</b> experience vision, <b>Solmax</b> brand tracker. Plus SME-CEO coaching.</div></div></div>
+    <div class="arcRow"><div class="y">2021 — 2022</div><div><h4>Emperor — Brand strategy director (contract)</h4><div class="r">London</div><div class="b">Led strategy on <b>Adenza</b> (Gold ×2; sold to Nasdaq, $10.5bn). Global research for <b>Variowell</b>'s Kikoo &amp; Swayy sleeptech. £600k of new-business pipeline, plus the thought-leadership writing.</div></div></div>
     <div class="arcRow"><div class="y">2017 — 2019</div><div><h4>BrandPie — Senior strategy consultant</h4><div class="r">London</div><div class="b"><b>EY</b>, <b>Baker Tilly</b>, <b>Capgemini</b>, <b>ICIS</b>, <b>Fastmarkets</b>, <b>finnCap</b>, <b>PSPA</b>, <b>Frontline AIDS</b> — pitched and led the rebrand (Gold).</div></div></div>
-    <div class="arcRow"><div class="y">2013 — 2017</div><div><h4>Freelance brand strategist</h4><div class="r">London · Landor, Siegel+Gale, Baringa, Ogilvy Healthworld &amp; others</div><div class="b"><b>Fidelity International</b> global voice; <b>Kaspersky</b> repositioning; <b>Covestro</b> pitch-winning idea; <b>BP</b>, <b>Barclays</b>, <b>Primetals</b>, <b>Emirates Post</b>, <b>Lloyds</b>.</div></div></div>
-    <div class="arcRow"><div class="y">2010 — 2012</div><div><h4>Principals — Brand strategist</h4><div class="r">Sydney</div><div class="b"><b>King &amp; Wood Mallesons</b>; <b>The Coolum Residences</b> (REBRAND Award); <b>WongPartnership</b> (REBRAND Award); <b>JBWere</b>.</div></div></div>
-    <div class="arcRow"><div class="y">2009 — 2010</div><div><h4>SLAM — Founder</h4><div class="r">London &amp; Johannesburg</div><div class="b"><b>Actuarial Profession</b> grad campaign (Digital Impact Award). OgilvyOne digital work: Lucozade, BP, Avis, KFC.</div></div></div>
-    <div class="arcRow"><div class="y">2004 — 2008</div><div><h4>HKLM · FIN International — Brand strategist</h4><div class="r">Johannesburg &amp; London</div><div class="b"><b>University of Johannesburg</b> launch (Generation Next Award); <b>Singita</b>; <b>Design Indaba</b> challenge set by Wally Olins; the original <b>Exxaro "Powering possibility"</b>.</div></div></div>
+    <div class="arcRow"><div class="y">2013 — 2017</div><div><h4>Freelance brand strategist</h4><div class="r">London · Landor, Siegel+Gale, Baringa, Ogilvy Healthworld, Reluctantly Brave, Aeron, Straightline, SLAM</div><div class="b"><b>Fidelity International</b> global voice; <b>Kaspersky</b> repositioning; <b>Covestro</b> pitch-winning idea; <b>BP</b>, <b>Barclays</b>, <b>Primetals</b>, <b>Envigo</b>, <b>Emirates Post</b>, <b>Lloyds</b>.</div></div></div>
+    <div class="arcRow"><div class="y">2010 — 2012</div><div><h4>Principals — Brand strategist</h4><div class="r">Sydney</div><div class="b"><b>King &amp; Wood Mallesons</b> social &amp; content strategy — highest Facebook engagement of any APAC law firm; <b>The Coolum Residences</b> rebrand (REBRAND Award); <b>WongPartnership</b> Singapore (REBRAND Award); <b>JBWere</b> Wealth.</div></div></div>
+    <div class="arcRow"><div class="y">2010</div><div><h4>OgilvyOne — Freelance digital strategist</h4><div class="r">Johannesburg</div><div class="b">Digital campaigns for <b>Lucozade</b>, <b>BP</b> and <b>Avis</b>.</div></div></div>
+    <div class="arcRow"><div class="y">2009 — 2010</div><div><h4>SLAM — Freelance brand strategist</h4><div class="r">London</div><div class="b"><b>The Actuarial Profession</b> graduate campaign (Digital Impact Award); <b>CQS</b>.</div></div></div>
+    <div class="arcRow"><div class="y">2004 — 2008</div><div><h4>HKLM · FIN International — Brand strategist</h4><div class="r">Johannesburg &amp; London</div><div class="b"><b>University of Johannesburg</b> launch (Generation Next Award); <b>Singita</b>; <b>Design Indaba</b> challenge set by Wally Olins; the original <b>Exxaro "Powering possibility"</b> — still in market twenty years on; then <b>LaSalle Investment Management</b>.</div></div></div>
+    <div class="arcRow"><div class="y">Education</div><div><h4>BA (Hons) Strategic Communication</h4><div class="r">University of Johannesburg · 2005</div><div class="b">Plus <b>Digital Marketing Certificate</b> (Squared Online) and <b>Storytelling for Influence</b> (IDEO U).</div></div></div>
   </div>
 </section>
 
@@ -555,12 +561,11 @@
 
 <style>
   /* runtime additions — vesica washes fade in after the circles draw */
-  .washG{opacity:0;transition:opacity 1.8s ease 1.5s}
-  .drawn .washG{opacity:1}
+  .washG{opacity:0;transition:opacity .5s ease}
+  .geoFrame.inview .washG{opacity:1;transition:opacity 1.8s ease 1.5s}
   .washG circle{stroke:none!important;stroke-dasharray:none!important;stroke-dashoffset:0!important}
   /* awareness is held, then released — geometry fades as its section leaves */
-  .geo{opacity:1;transition:opacity 1.2s ease .1s}
-  .geoFrame:not(.inview) .geo{opacity:0;transition:opacity .4s ease}
+  .geo{opacity:1}
 </style>
 <script>
 /* THE HEART — scroll shifts the light: hue drifts, blobs move at different depths. page works fine without JS */
@@ -622,7 +627,7 @@ var REDUCED=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduc
       if(e.isIntersecting&&e.intersectionRatio>=.2){e.target.classList.add('drawn');e.target.classList.add('inview')}
       else if(!e.isIntersecting){e.target.classList.remove('inview')}
     });
-  },{threshold:[0,.2],rootMargin:'0px 0px -40px'});
+  },{threshold:[0,.2],rootMargin:'-8% 0px -8%'});
   frames.forEach(function(f){io.observe(f)});
 })();
 /* measurement made kinetic — the numbers count themselves in */
